@@ -1,0 +1,1 @@
+This proyect is about the things more basics for python. 
