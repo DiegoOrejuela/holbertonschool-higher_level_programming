@@ -1,0 +1,1 @@
+This proyect is about if/else, loops, functions in python.
