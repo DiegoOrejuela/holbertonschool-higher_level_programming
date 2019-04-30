@@ -2,10 +2,13 @@
 import random
 number = random.randint(-10000, 10000)
 signed = ""
-if number < 0:
-    signed = "-"
 strnum = str(number)
 lastdigit = int(strnum[-1])
+if number < 0:
+    if lastdigit != 0:
+        signed = "-"
+
+stri = ""
 if lastdigit > 5:
     stri = "and is greater than 5"
 elif lastdigit == 0:
