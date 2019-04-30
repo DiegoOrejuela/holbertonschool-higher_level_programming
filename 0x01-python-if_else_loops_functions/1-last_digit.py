@@ -1,14 +1,11 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-signed = ""
-strnum = str(number)
-lastdigit = int(strnum[-1])
 if number < 0:
-    if lastdigit != 0:
-        signed = "-"
+    lastdigit = number % -10
+else:
+    lastdigit = number % 10
 
-stri = ""
 if lastdigit > 5:
     stri = "and is greater than 5"
 elif lastdigit == 0:
@@ -16,4 +13,4 @@ elif lastdigit == 0:
 else:
     stri = "and is less than 6 and not 0"
 
-print("Last digit of {0} is {1}{2} {3}".format(number, signed, lastdigit, stri))
+print("Last digit of {0} is {1} {2}".format(number, lastdigit, stri))
