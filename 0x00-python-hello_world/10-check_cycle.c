@@ -9,6 +9,9 @@ int check_cycle(listint_t *list)
 	listint_t *p1;
 	listint_t *p2;
 
+	if (list == NULL)
+		return(0);
+
 	p1 = list;
 	p2 = (*list).next;
 
