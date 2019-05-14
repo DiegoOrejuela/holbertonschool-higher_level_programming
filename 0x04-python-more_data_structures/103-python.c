@@ -3,7 +3,7 @@
 #include <bytesobject.h>
 
 /**
- * print_python_list_info - prints some basic info about Python lists.
+ * print_python_list - prints some basic info about Python lists.
  * @p: object type list.
  *
  * Return: nothing.
@@ -14,7 +14,7 @@ void print_python_list(PyObject *p)
 	Py_ssize_t size_list = PyList_Size(p);
 	Py_ssize_t i;
 
-        printf("[*] Python list info\n");
+	printf("[*] Python list info\n");
 	printf("[*] Size of the Python List = %lu\n", size_list);
 	printf("[*] Allocated = %lu\n", (*list).allocated);
 
@@ -25,24 +25,23 @@ void print_python_list(PyObject *p)
 }
 
 /**
- * print_python_list_info - prints some basic info about Python lists.
+ * print_python_bytes - prints some basic info about Python bytes objects.
  * @p: object type list.
  *
  * Return: nothing.
  */
 void print_python_bytes(PyObject *p)
 {
-       	char *str;
+	char *str;
 	int i;
-	PyBytesObject *bstring;
-
-	bstring = (PyBytesObject *)p;
-	if (bstring == NULL)
-		printf("aquí estamos");
 
 	printf("[.] bytes object info\n");
+	if (PyBytes_Check(p) == 0)
+	{
+		printf("  [ERROR] Invalid Bytes Object\n");
+		return;
+	}
 	printf("  size: %lu\n", PyBytes_Size(p));
-
 	str = PyBytes_AsString(p);
 	printf("  trying string: %s\n", str);
 
