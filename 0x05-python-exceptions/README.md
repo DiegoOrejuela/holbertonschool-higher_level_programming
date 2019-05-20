@@ -1,0 +1,1 @@
+This proyect is about Exceptions in python.
