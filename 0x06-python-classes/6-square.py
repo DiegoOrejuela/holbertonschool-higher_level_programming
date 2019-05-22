@@ -25,9 +25,9 @@ class Square:
             if self.p0 >= 0 and self.p1 >= 0:
                 self.__position = position
             else:
-                raise TypeError(my_str)
+                raise TypeError(self.my_str)
         else:
-            raise TypeError(my_str)
+            raise TypeError(self.my_str)
 
     def area(self):
         return self.__size * self.__size
@@ -49,9 +49,9 @@ class Square:
             if self.p0 >= 0 and self.p1 >= 0:
                 self.__position = position
             else:
-                raise TypeError(my_str)
+                raise TypeError(self.my_str)
         else:
-            raise TypeError(my_str)
+            raise TypeError(self.my_str)
 
     @size.setter
     def size(self, value):
