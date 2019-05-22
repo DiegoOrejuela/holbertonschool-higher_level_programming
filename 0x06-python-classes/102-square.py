@@ -28,27 +28,33 @@ class Square:
                 self.__size = value
         else:
             raise TypeError("size must be a number")
-    def __lt__(self, other): # For x < y
+
+    def __lt__(self, other):
         if isinstance(other, self.__class__):
             return self.__size < other.__size
         return False
-    def __le__(self, other): # For x <= y
+
+    def __le__(self, other):
         if isinstance(other, self.__class__):
             return self.__size <= other.__size
         return False
-    def __eq__(self, other): # For x == y
+
+    def __eq__(self, other):
         if isinstance(other, self.__class__):
             return self.__size == other.__size
         return False
-    def __ne__(self, other): # For x != y OR x <> y
+
+    def __ne__(self, other):
         if isinstance(other, self.__class__):
             return self.__size != other.__size
         return False
-    def __gt__(self, other): # For x > y
+
+    def __gt__(self, other):
         if isinstance(other, self.__class__):
             return self.__size > other.__size
         return False
-    def __ge__(self, other): # For x >= y
+
+    def __ge__(self, other):
         if isinstance(other, self.__class__):
             return self.__size >= other.__size
         return False
