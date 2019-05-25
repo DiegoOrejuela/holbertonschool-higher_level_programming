@@ -14,8 +14,8 @@ def add_integer(a, b=98):
     n = [a, b]
     n_str = ['a', 'b']
     for i in range(2):
-        if type(n[i]) == float and type(n[i]) != int:
+        if type(n[i]) == float:
             n[i] = int(n[i])
-        elif type(n[i]) != int:
+        elif type(n[i]) != int and type(n[i]) != float:
             raise TypeError(n_str[i] + " must be an integer")
     return n[0] + n[1]
