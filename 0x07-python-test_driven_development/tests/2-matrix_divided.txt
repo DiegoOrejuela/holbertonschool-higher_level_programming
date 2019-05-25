@@ -1,0 +1,60 @@
+The `2-matrix_divided` module
+======================
+
+Using `matrix_divided`
+-------------------
+
+This import text file in for  function matrix_divided. Firts import
+'matrix_divided' from the '2-matrix_divided' module:
+
+     >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 5, 6]
+... ]
+
+
+Now use it:
+
+
+>>> matrix_divided(matrix, 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+>>> matrix_divided(matrix, 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+>>> matrix_divided(matrix, 20)
+[[0.05, 0.1, 0.15], [0.2, 0.25, 0.3]]
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+>>> matrix_divided(matrix, -1)
+[[-1.0, -2.0, -3.0], [-4.0, -5.0, -6.0]]
+>>> matrix_divided(matrix, 3.5)
+[[0.29, 0.57, 0.86], [1.14, 1.43, 1.71]]
+>>> matrix_divided(matrix, None)
+Traceback (most recent call last):
+TypeError: div must be a number
+>>> matrix_divided(matrix, h)
+Traceback (most recent call last):
+NameError: name 'h' is not defined
+>>> matrix_divided(matrix, 2e3040)
+[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+>>> matrix = [None]
+>>> matrix_divided(matrix, 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix = [2, [2, 3]]
+>>> matrix_divided(matrix, 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix = [[2,"3"], [2, 3]]
+>>> matrix_divided(matrix, 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix = [[2, 3, 4], [2, 3]]
+>>> matrix_divided(matrix, 3)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+>>> matrix = [[]]
+>>> matrix_divided(matrix, 3)
+[[]]
