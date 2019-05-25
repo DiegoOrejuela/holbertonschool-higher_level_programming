@@ -11,10 +11,8 @@ def say_my_name(first_name, last_name=""):
     Arguments: first_name and last_name must be strings otherwise.
     Return:Nothing"""
 
-    n = [first_name, last_name]
-    n_str = ['first_name', 'last_name']
-
-    for i in range(2):
-        if type(n[i]) != str:
-            raise TypeError(n_str[i] + " must be a string")
+    if type(first_name) is not str:
+        raise TypeError("first_name must be a string")
+    if type(last_name) is not str:
+        raise TypeError("last_name must be a string")
     print("My name is {:s} {:s}".format(first_name, last_name))
