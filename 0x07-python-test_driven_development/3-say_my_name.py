@@ -13,10 +13,8 @@ def say_my_name(first_name, last_name=""):
 
     n = [first_name, last_name]
     n_str = ['first_name', 'last_name']
-    space = " "
-    if last_name == "":
-        space = ""
+
     for i in range(2):
         if type(n[i]) != str:
             raise TypeError(n_str[i] + " must be a string")
-    print("My name is {}{}{}".format(first_name, space, last_name))
+    print("My name is {} {}".format(first_name, last_name))
