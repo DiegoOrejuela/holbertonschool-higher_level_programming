@@ -1,18 +1,20 @@
 #!/usr/bin/python3
-""" module that prints your name
-"""
+"""Module 3-say_my_name.py | Test-driven development Package
+
+What you should learn from this project:
+- What’s an interactive test and why tests are important
+- How to write Docstrings to create tests and he basic option flags"""
 
 
 def say_my_name(first_name, last_name=""):
-    """function that say my name
-       My name is <first name> <last name>
-    Args:
-       first_name (str): mandatory
-       last_name (str): opcional
-    """
+    """3-say_my_name - function that prints My name is <first name> <last name>.
+    Arguments: first_name and last_name must be strings otherwise.
+    Return:Nothing"""
 
-    if type(first_name) is not str:
-        raise TypeError("first_name must be a string")
-    if type(last_name) is not str:
-        raise TypeError("last_name must be a string")
-    print("My name is " + first_name + " " + last_name)
+    n = [first_name, last_name]
+    n_str = ['first_name', 'last_name']
+
+    for i in range(2):
+        if type(n[i]) != str:
+            raise TypeError(n_str[i] + " must be a string")
+    print("My name is {:s} {:s}".format(first_name, last_name))
