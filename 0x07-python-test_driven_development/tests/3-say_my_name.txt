@@ -15,11 +15,12 @@ Now use it:
 My name is John Smith
 >>> say_my_name("John", "Smith")
 My name is John Smith
->>> say_my_name("Bob")
-My name is Bob
 >>> say_my_name(12, "White")
 Traceback (most recent call last):
 TypeError: first_name must be a string
 >>> say_my_name("juan", 5)
 Traceback (most recent call last):
 TypeError: last_name must be a string
+>>> say_my_name("Bob")
+My name is Bob 
+>>>
