@@ -1,0 +1,36 @@
+The `2-matrix_divided` module
+======================
+
+Using `matrix_divided`
+-------------------
+
+This import text file in for  function matrix_divided. Firts import
+'matrix_divided' from the '2-matrix_divided' module:
+
+     >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Now use it:
+
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
+>>> text_indentation(1)
+Traceback (most recent call last):
+TypeError: text must be a string
+>>> text_indentation("""juan.?:""")
+juan.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+>>> text_indentation("""""")
+>>> text_indentation("""74uf493u?mededk.fuheue""")
+74uf493u?
+<BLANKLINE>
+mededk.
+<BLANKLINE>
+fuheue
