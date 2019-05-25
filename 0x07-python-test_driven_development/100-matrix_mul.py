@@ -27,6 +27,9 @@ def matrix_mul(m_a, m_b):
     for i in range(len(matrix_s)):
         if len(matrix_s[i]) == 0:
             raise TypeError(m_s[i] + " can't be empty")
+        elif len(matrix_s[i]) == 1:
+            if len(matrix_s[i][0]) == 0:
+                raise TypeError(m_s[i] + " can't be empty")
 
     # Integer o floats
     err = " should contain only integers or floats"
