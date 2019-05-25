@@ -3,7 +3,14 @@ The `0-add_integer` module
 
 Using `add_integer`
 -------------------
->>> add_integer = __import__('0-add_integer').add_integer
+
+This import text file in for  function add_integer. Firts import 'factoria'
+from the '0-add_integer' module:
+
+     >>> add_integer = __import__('0-add_integer').add_integer
+
+Now use it:
+
 >>> add_integer(1, 2)
 3
 >>> add_integer(100, -2)
@@ -24,3 +31,29 @@ b must be an integer
 ...     print(e)
 ...
 a must be an integer
+>>> add_integer(None)
+Traceback (most recent call last):
+  ...
+TypeError: a must be an integer
+>>> add_integer("hola", 5)
+Traceback (most recent call last):
+  ...
+TypeError: a must be an integer
+>>> add_integer(1.5, 1.5)
+3
+>>> add_integer(1e300, 2e3040)
+Traceback (most recent call last):
+  ...
+OverflowError: cannot convert float infinity to integer
+>>> add_integer()
+Traceback (most recent call last):
+  ...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+>>> add_integer(6,)
+104
+>>> add_integer(-2, -6)
+-8
+>>> add_integer(-2, g)
+Traceback (most recent call last):
+  ...
+NameError: name 'g' is not defined
