@@ -9,6 +9,6 @@ What you should learn from this project:
 class Rectangle:
     """Rectangle - defines a rectangle.
     Attributes: nothing.
-    Method: nothing."""
+    Methods: nothing."""
 
     pass
