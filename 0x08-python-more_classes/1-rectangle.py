@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module 0-rectangle | More Classes and Objects
+"""Module 1-rectangle | More Classes and Objects
 
 What you should learn from this project:
 - What is a class, What is an object and an instance
@@ -9,22 +9,42 @@ What you should learn from this project:
 class Rectangle:
     """Rectangle - defines a rectangle.
     Attributes: nothing.
-    Method: nothing."""
+    Method:
+    - __init__
+    - width
+    - height
+    - width(value)
+    - height(value)."""
 
     def __init__(self, width=0, height=0):
+        """__init__ - method constructor.
+        Args:
+            width (int): width of rectangle.
+            height (int): height of rectangle
+        """
         self.__width = width
         self.__height = height
 
     @property
     def width(self):
+        """width - get width.
+        Args: nothing
+        """
         return self.__width
 
     @property
     def height(self):
+        """height - get height.
+        Args: nothing
+        """
         return self.__height
 
     @width.setter
     def width(self, value):
+        """width - set width.
+        Args:
+        - value (int): set width of rectangle.
+        """
         if type(value) == int:
             if value < 0:
                 raise ValueError("width must be >= 0")
@@ -36,6 +56,10 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
+        """height - set height.
+        Args:
+        - value (int): set height of rectangle.
+        """
 
         if type(value) == int:
             if value < 0:
