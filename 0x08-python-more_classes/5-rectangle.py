@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module 3-rectangle | More Classes and Objects
+"""Module 5-rectangle | More Classes and Objects
 
 What you should learn from this project:
 - What is a class, What is an object and an instance
@@ -39,6 +39,10 @@ class Rectangle:
         return ""
 
     def __del__(self):
+        """__del__ - delete to object Rectangule.
+        Args: nothing
+        return: Nothing.
+        """
         print("Bye rectangle...")
 
     def __repr__(self):
