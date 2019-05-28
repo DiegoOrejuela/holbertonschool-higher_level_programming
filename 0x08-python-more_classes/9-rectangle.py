@@ -31,6 +31,10 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
+        """square - method constructor.
+        Args:
+            size (int): value for size of square.
+        """
         return cls(size, size)
 
     @staticmethod
