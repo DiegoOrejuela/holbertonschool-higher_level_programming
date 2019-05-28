@@ -24,9 +24,9 @@ class Rectangle:
             width (int): width of rectangle.
             height (int): height of rectangle
         """
+        Rectangle.number_of_instances += 1
         self.width = width
         self.height = height
-        Rectangle.number_of_instances += 1
 
     def __str__(self):
         """__str__ - Create a new string object from the given object.
