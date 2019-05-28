@@ -19,8 +19,8 @@ class Rectangle:
     number_of_instances = 0
     print_symbol = "#"
 
-    @classmethod
-    def bigger_or_equal(cls, rect_1, rect_2):
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
         """bigger_or_equal - returns the biggest rectangle based on the area.
         Args:
             rect_1 (Rectangule): first rectangle.
