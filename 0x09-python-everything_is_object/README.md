@@ -1,0 +1,1 @@
+Everything is object. The proyect is for understand the implemetation of python.
