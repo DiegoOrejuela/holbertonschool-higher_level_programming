@@ -19,6 +19,16 @@ class Rectangle:
     number_of_instances = 0
     print_symbol = "#"
 
+    def __init__(self, width=0, height=0):
+        """__init__ - method constructor.
+        Args:
+            width (int): width of rectangle.
+            height (int): height of rectangle
+        """
+        self.__width = width
+        self.__height = height
+        Rectangle.number_of_instances += 1
+
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """bigger_or_equal - returns the biggest rectangle based on the area.
@@ -37,16 +47,6 @@ class Rectangle:
             return rect_1
         else:
             return rect_1
-
-    def __init__(self, width=0, height=0):
-        """__init__ - method constructor.
-        Args:
-            width (int): width of rectangle.
-            height (int): height of rectangle
-        """
-        self.__width = width
-        self.__height = height
-        Rectangle.number_of_instances += 1
 
     def __str__(self):
         """__str__ - Create a new string object from the given object.

@@ -22,8 +22,8 @@ class Rectangle:
             width (int): width of rectangle.
             height (int): height of rectangle
         """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     def __str__(self):
         """__str__ - Create a new string object from the given object.
