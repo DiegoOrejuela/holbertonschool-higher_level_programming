@@ -37,7 +37,7 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
         for i in range(self.__height):
-            print(self.__width * self.print_symbol, end="")
+            print(self.__width * str(self.print_symbol), end="")
             if i != self.__height - 1:
                 print()
         return ""
