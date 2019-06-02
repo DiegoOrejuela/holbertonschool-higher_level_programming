@@ -7,6 +7,12 @@ max_integer = __import__('6-max_integer').max_integer
 
 class TestMaxInteger(unittest.TestCase):
 
+    def test_last_item_gr(self):
+        self.assertEqual(max_integer([4]), 4)
+
+    def test_last_item_gr(self):
+        self.assertEqual(max_integer([2, 2, 3, 4]), 4)
+
     def test_upper(self):
         self.assertEqual(max_integer([2, 3, 4, 1]), 4)
 
