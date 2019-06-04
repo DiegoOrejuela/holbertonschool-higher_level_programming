@@ -64,9 +64,6 @@ Now use it:
 >>> my_list.append(4)
 >>> my_list.print_sorted()
 Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/vagrant/holbertonschool-higher_level_programming/0x0A-python-inheritance/1-my_list.py", line 6, in print_sorted
-    self.sort()
 TypeError: unorderable types: int() < NoneType()
 >>> my_list = MyList()
 >>> my_list.append("1")
@@ -82,9 +79,6 @@ TypeError: unorderable types: int() < NoneType()
 >>> my_list.append(4)
 >>> my_list.print_sorted()
 Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/vagrant/holbertonschool-higher_level_programming/0x0A-python-inheritance/1-my_list.py", line 6, in print_sorted
-    self.sort()
 TypeError: unorderable types: int() < str()
 >>> my_list = MyList()
 >>> my_list.append(None)
@@ -93,9 +87,6 @@ TypeError: unorderable types: int() < str()
 >>> my_list.append(None)
 >>> my_list.print_sorted()
 Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/vagrant/holbertonschool-higher_level_programming/0x0A-python-inheritance/1-my_list.py", line 6, in print_sorted
-    self.sort()
 TypeError: unorderable types: NoneType() < NoneType()
 >>> my_list = MyList()
 >>> my_list.append([1, 2])
