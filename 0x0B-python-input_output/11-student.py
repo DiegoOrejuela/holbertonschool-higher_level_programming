@@ -7,5 +7,5 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(obj):
-        return obj.__dict__
+    def to_json(self):
+        return self.__dict__
