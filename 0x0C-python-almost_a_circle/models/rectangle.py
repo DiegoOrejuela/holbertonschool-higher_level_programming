@@ -24,6 +24,15 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
+    def __str__(self):
+        """__str__ - Create a new string object from the given object.
+        Args: nothing
+        return: empty string
+        """
+        return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
+                                              self.id, self.x, self.y,
+                                              self.width, self.height)
+
     def display(self):
         """display - prints in stdout the Rectangle instance with the
         character #
