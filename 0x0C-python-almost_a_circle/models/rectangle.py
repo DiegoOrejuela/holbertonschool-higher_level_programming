@@ -24,6 +24,22 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
+    def display(self):
+        """display - prints in stdout the Rectangle instance with the
+        character #
+        Args: none
+        return: nothing
+        """
+        for i in range(self.__height):
+            print(self.__width * '#')
+
+    def area(self):
+        """area - width * height.
+        Args: nothing
+        Return: area of rectangle.
+        """
+        return self.__width * self.__height
+
     @property
     def width(self):
         """width - get width.
@@ -103,10 +119,3 @@ class Rectangle(Base):
             if value < 0:
                 raise ValueError("y must be >= 0")
             self.__y = value
-
-    def area(self):
-        """area - width * height.
-        Args: nothing
-        Return: area of rectangle.
-        """
-        return self.__width * self.__height
