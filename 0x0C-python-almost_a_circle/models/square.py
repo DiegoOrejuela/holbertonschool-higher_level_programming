@@ -21,6 +21,30 @@ class Square(Rectangle):
         """
         super().__init__(size, size, x, y, id)
 
+    def update(self, *args, **kwargs):
+        """update - Update the class Rectangle, that assigns an argument to
+        each attribute:
+        Args:
+            *args (list):
+                1st argument should be the id attribute
+                2nd argument should be the width attribute
+                3rd argument should be the height attribute
+                4th argument should be the x attribute
+                5th argument should be the y attribute
+            **kwargs(dict):
+                 key/value (keyworded arguments)
+        """
+        if len(args) >= 2:
+            args = list(args)
+            args.insert(2, args[1])
+        temp_kwargs = kwargs.copy()
+        for key in temp_kwargs:
+            if key == "size":
+                kwargs["width"] = kwargs[key]
+                kwargs["height"] = kwargs[key]
+
+        super().update(*args, **kwargs)
+
     @property
     def size(self):
         """size - get size.

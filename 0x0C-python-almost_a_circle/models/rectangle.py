@@ -28,23 +28,26 @@ class Rectangle(Base):
         """update - Update the class Rectangle, that assigns an argument to
         each attribute:
         Args:
-            args* (list):
+            *args (list):
                 1st argument should be the id attribute
                 2nd argument should be the width attribute
                 3rd argument should be the height attribute
                 4th argument should be the x attribute
                 5th argument should be the y attribute
+            **kwargs(dict):
+                 key/value (keyworded arguments)
         """
-        if len(args) == 1:
-            self.id = args[0]
-        if len(args) == 2:
-            self.width = args[1]
-        if len(args) == 3:
-            self.height = args[2]
-        if len(args) == 4:
-            self.x = args[3]
-        if len(args) == 5:
-            self.y = args[4]
+        for i in range(len(args)):
+            if i == 0:
+                self.id = args[i]
+            elif i == 1:
+                self.width = args[i]
+            elif i == 2:
+                self.height = args[i]
+            elif i == 3:
+                self.x = args[i]
+            elif i == 4:
+                self.y = args[i]
 
         if len(args) == 0:
             for key in kwargs:
