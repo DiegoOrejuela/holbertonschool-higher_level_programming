@@ -30,8 +30,8 @@ class Rectangle(Base):
         return: empty string
         """
         return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
-                                              self.id, self.x, self.y,
-                                              self.width, self.height)
+                                                self.id, self.x, self.y,
+                                                self.width, self.height)
 
     def display(self):
         """display - prints in stdout the Rectangle instance with the
@@ -39,7 +39,9 @@ class Rectangle(Base):
         Args: none
         return: nothing
         """
+        print("\n" * self.y, end="")
         for i in range(self.__height):
+            print(" " * self.x, end="")
             print(self.__width * '#')
 
     def area(self):
