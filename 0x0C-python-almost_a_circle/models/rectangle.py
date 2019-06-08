@@ -24,7 +24,7 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """update - Update the class Rectangle, that assigns an argument to
         each attribute:
         Args:
@@ -45,6 +45,19 @@ class Rectangle(Base):
             self.x = args[3]
         if len(args) == 5:
             self.y = args[4]
+
+        if len(args) == 0:
+            for key in kwargs:
+                if key == "id":
+                    self.id = kwargs[key]
+                if key == "width":
+                    self.width = kwargs[key]
+                if key == "height":
+                    self.height = kwargs[key]
+                if key == "x":
+                    self.x = kwargs[key]
+                if key == "y":
+                    self.y = kwargs[key]
 
     def __str__(self):
         """__str__ - Create a new string object from the given object.
