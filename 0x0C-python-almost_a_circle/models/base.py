@@ -42,7 +42,12 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-
+        """save_to_file - writes the JSON string representation of list_objs
+        to a file:
+        Args:
+            list_objs (objects)
+        Return: nothing
+        """
         json_file = cls.__name__ + ".json"
         with open(json_file, mode='w', encoding="UTF-8") as f:
             if not list_objs:
