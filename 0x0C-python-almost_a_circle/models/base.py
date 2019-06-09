@@ -3,6 +3,7 @@
 This module is part of repository for review everything about Python:
 Import, Exceptions, Class, Private attribute, Getter/Setter, Class method,
 Static method, Inheritance, Unittest, Read/Write file"""
+from json import dumps
 
 
 class Base:
@@ -26,3 +27,14 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    def to_json_string(list_dictionaries):
+        """to_json_string - returns the JSON string representation
+        Args:
+            list_dictionaries(list)
+        Return: If list_dictionaries is None or empty, return the string: "[]"
+        Otherwise, return the JSON string representation of list_dictionaries
+        """
+        if not list_dictionaries or len(list_dictionaries) == 0:
+            return "[]"
+        return dumps(list_dictionaries)
