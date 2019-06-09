@@ -21,6 +21,16 @@ class Square(Rectangle):
         """
         super().__init__(size, size, x, y, id)
 
+    def to_dictionary(self):
+        """to_dictionary - returns the dictionary representation of a Rectangle.
+        Args: nothing
+        return: the dictionary representation of a Rectangle.
+        """
+        rep_dict = super().to_dictionary()
+        rep_dict["size"] = rep_dict.pop("width")
+        rep_dict.pop("height")
+        return rep_dict
+
     def update(self, *args, **kwargs):
         """update - Update the class Rectangle, that assigns an argument to
         each attribute:
