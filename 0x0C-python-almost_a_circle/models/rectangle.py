@@ -24,6 +24,22 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
+    def to_dictionary(self):
+        """to_dictionary - returns the dictionary representation of a Rectangle.
+        Args: nothing
+        return: the dictionary representation of a Rectangle.
+        """
+        dict_rep = {}
+        for key in self.__dict__:
+            if "_" in key[0]:
+                if "_Rectangle__" in key:
+                    dict_rep[key[12:]] = self.__dict__[key]
+                else:
+                    dict_rep[key[1:]] = self.__dict__[key]
+            else:
+                dict_rep[key] = self.__dict__[key]
+        return dict_rep
+
     def update(self, *args, **kwargs):
         """update - Update the class Rectangle, that assigns an argument to
         each attribute:
