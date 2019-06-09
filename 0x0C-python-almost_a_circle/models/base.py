@@ -4,6 +4,7 @@ This module is part of repository for review everything about Python:
 Import, Exceptions, Class, Private attribute, Getter/Setter, Class method,
 Static method, Inheritance, Unittest, Read/Write file"""
 from json import dumps, loads
+from os import path
 
 
 class Base:
@@ -27,6 +28,21 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @classmethod
+    def load_from_file(cls):
+        """load_from_file - file to instances
+        Args: nothing.
+        Return: returns a list of instances.
+        """
+        json_file = cls.__name__ + ".json"
+        list_return = []
+        if not path.exists(json_file):
+            return list_return
+        with open(json_file, mode="r", encoding="UTF-8") as f:
+            for item_list in cls.from_json_string(f.read()):
+                list_return.append(cls.create(**item_list))
+            return list_return
 
     @classmethod
     def create(cls, **dictionary):
