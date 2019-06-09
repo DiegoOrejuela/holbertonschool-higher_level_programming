@@ -3,7 +3,7 @@
 This module is part of repository for review everything about Python:
 Import, Exceptions, Class, Private attribute, Getter/Setter, Class method,
 Static method, Inheritance, Unittest, Read/Write file"""
-from json import dumps
+from json import dumps, loads
 
 
 class Base:
@@ -27,6 +27,20 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def from_json_string(json_string):
+        """from_json_string - that returns the list of the JSON string
+        representation json_string.
+        Args:
+            json_string (str): returns the JSON string representation.
+        Return: returns the JSON string representation, Otherwise, return
+        the list represented by json_string
+        """
+        return_list = []
+        if not json_string or len(json_string) == 0:
+            return return_list
+        return loads(json_string)
 
     @staticmethod
     def to_json_string(list_dictionaries):
