@@ -28,6 +28,18 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @classmethod
+    def create(cls, **dictionary):
+        """create - returns an instance with all attributes already set.
+        Args:
+            dictionary (dict) : can be thought of as a double pointer to a
+            dictionary
+        Return: returns an instance with all attributes already set.
+        """
+        obj = cls(1, 1)
+        obj.update(**dictionary)
+        return obj
+
     @staticmethod
     def from_json_string(json_string):
         """from_json_string - that returns the list of the JSON string
