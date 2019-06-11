@@ -5,6 +5,7 @@ Import, Exceptions, Class, Private attribute, Getter/Setter, Class method,
 Static method, Inheritance, Unittest, Read/Write file"""
 from json import dumps, loads
 from os import path
+from csv import writer
 
 
 class Base:
@@ -52,7 +53,10 @@ class Base:
             dictionary
         Return: returns an instance with all attributes already set.
         """
-        obj = cls(1, 1)
+        if cls.__name__ == "Rectangle":
+            obj = cls(1, 1)
+        if cls.__name__ == "Square":
+            obj = cls(1)
         obj.update(**dictionary)
         return obj
 
