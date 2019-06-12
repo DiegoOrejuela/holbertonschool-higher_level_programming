@@ -32,7 +32,7 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """save_to_file - writes the Csv string representation of list_objs
+        """save_to_file_csv - writes the Csv string representation of list_objs
         to a file:
         Args:
             list_objs (objects)
