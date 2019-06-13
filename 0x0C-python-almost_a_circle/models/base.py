@@ -11,7 +11,8 @@ from csv import DictWriter, DictReader
 class Base:
     """This class will be the “base” of all other classes in this project.
     The goal of it is to manage id attribute in all your future classes and
-    to avoid duplicating the same code (by extension, same bugs)
+    to avoid duplicating the same code
+    (by extension, same bugs)
     Attributes:
     - Class: __nb_objects.
     Methods: __init__."""
@@ -34,7 +35,8 @@ class Base:
     def load_from_file(cls):
         """load_from_file - file to instances
         Args: nothing.
-        Return: returns a list of instances.
+        Return: returns a
+        list of instances.
         """
         json_file = cls.__name__ + ".json"
         list_return = []
