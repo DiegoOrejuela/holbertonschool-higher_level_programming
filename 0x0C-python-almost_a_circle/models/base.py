@@ -34,7 +34,8 @@ class Base:
     def load_from_file(cls):
         """load_from_file - file to instances
         Args: nothing.
-        Return: returns a list of instances.
+        Return: returns a
+        list of instances.
         """
         json_file = cls.__name__ + ".json"
         list_return = []
