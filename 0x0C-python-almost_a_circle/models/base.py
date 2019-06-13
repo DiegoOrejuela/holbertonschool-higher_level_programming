@@ -18,7 +18,6 @@ class Base:
     Methods: __init__."""
 
     __nb_objects = 0
-
     def __init__(self, id=None):
         """__init__ - method constructor.
         Args:
