@@ -31,43 +31,6 @@ class Base:
             self.id = Base.__nb_objects
 
     @classmethod
-    def save_to_file_csv(cls, list_objs):
-        """save_to_file_csv - writes the Csv string representation of list_objs
-        to a file:
-        Args:
-            list_objs (objects)
-        Return: nothing
-        """
-        json_file = cls.__name__ + ".csv"
-        with open(json_file, mode='w', encoding="UTF-8") as f:
-            list_dict = []
-            for objs in list_objs:
-                list_dict.append(objs.to_dictionary())
-            keys = list_dict[0].keys()
-            obj_writer = DictWriter(f, keys)
-            obj_writer.writeheader()
-            for item in list_dict:
-                obj_writer.writerow(item)
-
-    @classmethod
-    def load_from_file_csv(cls):
-        """load_from_file_csv - file to instances
-        Args: nothing.
-        Return: returns a list of instances.
-        """
-        json_file = cls.__name__ + ".csv"
-        list_return = []
-        if not path.exists(json_file):
-            return list_return
-        with open(json_file, mode="r", encoding="UTF-8") as f:
-            obj_reader = DictReader(f)
-            for row in obj_reader:
-                for item in row:
-                    row[item] = int(row[item])
-                list_return.append(cls.create(**row))
-        return list_return
-
-    @classmethod
     def load_from_file(cls):
         """load_from_file - file to instances
         Args: nothing.
@@ -142,3 +105,42 @@ class Base:
 
                 str_list = cls.to_json_string(list_dict)
                 f.write(str_list)
+
+"""
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        save_to_file_csv - writes the Csv string representation of list_objs
+        to a file:
+        Args:
+            list_objs (objects)
+        Return: nothing
+
+        json_file = cls.__name__ + ".csv"
+        with open(json_file, mode='w', encoding="UTF-8") as f:
+            list_dict = []
+            for objs in list_objs:
+                list_dict.append(objs.to_dictionary())
+            keys = list_dict[0].keys()
+            obj_writer = DictWriter(f, keys)
+            obj_writer.writeheader()
+            for item in list_dict:
+                obj_writer.writerow(item)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        load_from_file_csv - file to instances
+        Args: nothing.
+        Return: returns a list of instances.
+
+        json_file = cls.__name__ + ".csv"
+        list_return = []
+        if not path.exists(json_file):
+            return list_return
+        with open(json_file, mode="r", encoding="UTF-8") as f:
+            obj_reader = DictReader(f)
+            for row in obj_reader:
+                for item in row:
+                    row[item] = int(row[item])
+                list_return.append(cls.create(**row))
+        return list_return
+"""
