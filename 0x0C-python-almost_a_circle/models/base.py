@@ -11,7 +11,8 @@ from csv import writer
 class Base:
     """This class will be the “base” of all other classes in this project.
     The goal of it is to manage id attribute in all your future classes and
-    to avoid duplicating the same code (by extension, same bugs)
+    to avoid duplicating the same code
+    (by extension, same bugs)
     Attributes:
     - Class: __nb_objects.
     Methods: __init__."""
