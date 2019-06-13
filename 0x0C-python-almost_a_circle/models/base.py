@@ -108,14 +108,13 @@ class Base:
                 str_list = cls.to_json_string(list_dict)
                 f.write(str_list)
 
-"""
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        save_to_file_csv - writes the Csv string representation of list_objs
+        """save_to_file_csv - writes the Csv string representation of list_objs
         to a file:
         Args:
             list_objs (objects)
-        Return: nothing
+        Return: nothing"""
 
         json_file = cls.__name__ + ".csv"
         with open(json_file, mode='w', encoding="UTF-8") as f:
@@ -130,9 +129,9 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        load_from_file_csv - file to instances
+        """load_from_file_csv - file to instances
         Args: nothing.
-        Return: returns a list of instances.
+        Return: returns a list of instances."""
 
         json_file = cls.__name__ + ".csv"
         list_return = []
@@ -145,4 +144,3 @@ class Base:
                     row[item] = int(row[item])
                 list_return.append(cls.create(**row))
         return list_return
-"""
