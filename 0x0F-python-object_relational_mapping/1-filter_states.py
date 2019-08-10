@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-1-filter_states | lists all states with a name starting with N (upper N)
+1-filter_states | lists all states with a name starting with
+N (upper N)
 
 """
 import sys
@@ -16,7 +17,8 @@ if __name__ == "__main__":
         charset="utf8")
 
     cursor = conexion.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    cursor.execute(
+        "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC")
     query_rows = cursor.fetchall()
     for row in query_rows:
         print(row)
