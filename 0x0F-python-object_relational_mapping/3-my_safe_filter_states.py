@@ -20,10 +20,10 @@ if __name__ == "__main__":
     cursor = conexion.cursor()
     query = """
     SELECT * FROM states
-    WHERE BINARY name = "{}"
-    ORDER BY states.id ASC""".format(sys.argv[4])
+    WHERE BINARY name = %s
+    ORDER BY states.id ASC"""
 
-    cursor.execute(query)
+    cursor.execute(query, (sys.argv[4],))
     query_rows = cursor.fetchall()
     for row in query_rows:
         print(row)
