@@ -17,10 +17,7 @@ if __name__ == "__main__":
 
     session = Session(engine)
 
-    if len(session.query(State).all()) == 0:
-        print("Nothing")
-    else:
-        for state in session.query(State).order_by(State.id).all():
-            if "a" in state.name:
-                print("{}: {}".format(state.id, state.name))
+    for state in session.query(State).order_by(State.id).all():
+        if "a" in state.name:
+            print("{}: {}".format(state.id, state.name))
     session.close()
