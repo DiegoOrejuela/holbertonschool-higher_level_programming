@@ -20,7 +20,7 @@ if __name__ == "__main__":
     records = session.query(State.name, City.id, City.name)\
                      .select_from(State)\
                      .join(City)\
-                     .order_by(State.id)\
+                     .order_by(City.id)\
                      .all()
 
     for row in records:
