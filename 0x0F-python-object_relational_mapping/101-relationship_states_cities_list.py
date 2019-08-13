@@ -17,17 +17,11 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     session = Session(engine)
 
-    list_states = session.query(State, City)\
-                         .select_from(State)\
-                         .join(City).order_by(State.id.asc(),
-                                              City.id.asc()).all()
-    if list_states:
-        last_state = list_states[0][0]
-        print("{}: {}".format(list_states[0][0].id, list_states[0][0].name))
+    list_states = session.query(State).order_by(State.id.asc()).all()
+
     for each_state in list_states:
-        if not each_state[0] is last_state:
-            print("{}: {}".format(each_state[0].id, each_state[0].name))
-        last_state = each_state[0]
-        print("    {}: {}".format(each_state[1].id, each_state[1].name))
+        print("{}: {}".format(each_state.id, each_state.name))
+        for cities in each_state.cities:
+            print("    {}: {}".format(cities.id, cities.name))
 
     session.close()
