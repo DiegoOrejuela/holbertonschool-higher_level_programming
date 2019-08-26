@@ -7,4 +7,6 @@ if __name__ == "__main__":
 
     with urllib.request.urlopen(argv[1]) as response:
         html_header = response.info()
-        print(html_header._headers[11][1])
+        for item in html_header._headers:
+            if "X-Request-Id" in item[0]:
+                print(item[1])
