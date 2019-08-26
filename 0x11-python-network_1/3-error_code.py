@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Module - hbtn_header"""
+""" Module - 3-error_code"""
 
 if __name__ == "__main__":
     import urllib.request
