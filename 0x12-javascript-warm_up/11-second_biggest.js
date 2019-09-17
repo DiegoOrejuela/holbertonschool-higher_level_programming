@@ -2,7 +2,7 @@
 
 const argv = require('process').argv;
 
-if (isNaN(parseInt(argv[2])) || parseInt(argv[2]) === 1) {
+if (argv.length <= 3) {
   console.log(0);
 } else {
   const myList = [];
